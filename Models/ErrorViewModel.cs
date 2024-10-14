@@ -1,8 +1,9 @@
-namespace RealStats.Models;
-
-public class ErrorViewModel
+﻿namespace RealStats.Models
 {
-    public string? RequestId { get; set; }
-
-    public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    public class ErrorViewModel
+    {
+        // Properties for the ErrorViewModel
+        public string RequestId { get; set; }
+        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    }
 }
