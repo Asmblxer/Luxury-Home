@@ -1,25 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "/home/asmblxer/Documents/GitHub/Real-States/RealStats.csproj": {}
+    "D:\\Develobment\\.Net core\\projects\\RealState\\Real-States\\RealStats.csproj": {}
   },
   "projects": {
-    "/home/asmblxer/Documents/GitHub/Real-States/RealStats.csproj": {
+    "D:\\Develobment\\.Net core\\projects\\RealState\\Real-States\\RealStats.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/asmblxer/Documents/GitHub/Real-States/RealStats.csproj",
+        "projectUniqueName": "D:\\Develobment\\.Net core\\projects\\RealState\\Real-States\\RealStats.csproj",
         "projectName": "RealStats",
-        "projectPath": "/home/asmblxer/Documents/GitHub/Real-States/RealStats.csproj",
-        "packagesPath": "/home/asmblxer/.nuget/packages/",
-        "outputPath": "/home/asmblxer/Documents/GitHub/Real-States/obj/",
+        "projectPath": "D:\\Develobment\\.Net core\\projects\\RealState\\Real-States\\RealStats.csproj",
+        "packagesPath": "C:\\Users\\East-Sound\\.nuget\\packages\\",
+        "outputPath": "D:\\Develobment\\.Net core\\projects\\RealState\\Real-States\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/asmblxer/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\East-Sound\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,6 +35,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -51,6 +59,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[8.0.8, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.6, )"
             }
           },
           "imports": [
@@ -64,12 +76,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.7, 8.0.7]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -78,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

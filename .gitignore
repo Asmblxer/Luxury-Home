@@ -1,0 +1,9 @@
+# Ignore Visual Studio temporary files
+.vs/
+*.user
+*.suo
+appsettings.json
+
+# Ignore build results
+bin/
+obj/
