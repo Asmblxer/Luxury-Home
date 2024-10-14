@@ -33,7 +33,7 @@ namespace RealStats.Models
         public Manager Manager { get; set; }
         public int TenantId { get; set; }
         [ForeignKey("TenantId")]
-        public Tenant Tenant { get; set;
+        public Tenant Tenant { get; set; }
 
     }
 }

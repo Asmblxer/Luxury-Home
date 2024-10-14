@@ -3,6 +3,58 @@
   "WorkspaceRootPath": "D:\\dot_net_projects\\realstate_project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\models\\leaseagreement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:models\\leaseagreement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\data\\realstatecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:data\\realstatecontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\realstats.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:realstats.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\models\\properity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:models\\properity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\models\\properitystatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:models\\properitystatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\models\\reportissue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:models\\reportissue.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\models\\tenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:models\\tenant.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\models\\feature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:models\\feature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\models\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:models\\manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|d:\\dot_net_projects\\realstate_project\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4C0F0E83-B73B-4524-984E-F2622F80C267}|RealStats.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -27,19 +79,178 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-12T03:54:44.256Z",
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Models\\ErrorViewModel.cs*",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs*",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAYAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T13:37:41.772Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAADwvwgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T13:01:44.562Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RealStats.csproj",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\RealStats.csproj",
+              "RelativeDocumentMoniker": "RealStats.csproj",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\RealStats.csproj",
+              "RelativeToolTip": "RealStats.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-14T12:39:06.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReportIssue.cs",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Models\\ReportIssue.cs",
+              "RelativeDocumentMoniker": "Models\\ReportIssue.cs",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Models\\ReportIssue.cs",
+              "RelativeToolTip": "Models\\ReportIssue.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAA1wAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T11:01:29.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Properity.cs",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Models\\Properity.cs",
+              "RelativeDocumentMoniker": "Models\\Properity.cs",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Models\\Properity.cs",
+              "RelativeToolTip": "Models\\Properity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T07:46:27.441Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ProperityStatus.cs",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Models\\ProperityStatus.cs",
+              "RelativeDocumentMoniker": "Models\\ProperityStatus.cs",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Models\\ProperityStatus.cs",
+              "RelativeToolTip": "Models\\ProperityStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:26:07.455Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Feature.cs",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Models\\Feature.cs",
+              "RelativeDocumentMoniker": "Models\\Feature.cs",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Models\\Feature.cs",
+              "RelativeToolTip": "Models\\Feature.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T11:03:06.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Tenant.cs",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Models\\Tenant.cs",
+              "RelativeDocumentMoniker": "Models\\Tenant.cs",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Models\\Tenant.cs",
+              "RelativeToolTip": "Models\\Tenant.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAkwBsAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:57:36.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LeaseAgreement.cs",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Models\\LeaseAgreement.cs",
+              "RelativeDocumentMoniker": "Models\\LeaseAgreement.cs",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Models\\LeaseAgreement.cs",
+              "RelativeToolTip": "Models\\LeaseAgreement.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA7wBUAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T10:55:00.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-14T12:58:19.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RealStateContext.cs",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Data\\RealStateContext.cs",
+              "RelativeDocumentMoniker": "Data\\RealStateContext.cs",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Data\\RealStateContext.cs",
+              "RelativeToolTip": "Data\\RealStateContext.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAgwA8AAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T12:39:57.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Manager.cs",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Models\\Manager.cs",
+              "RelativeDocumentMoniker": "Models\\Manager.cs",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Models\\Manager.cs",
+              "RelativeToolTip": "Models\\Manager.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwBQAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T09:26:59.767Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Payment.cs",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Models\\Payment.cs",
+              "RelativeToolTip": "Models\\Payment.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwBEAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-14T11:00:20.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\dot_net_projects\\realstate_project\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-12T03:54:44.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
@@ -47,12 +258,11 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-12T03:52:47.883Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-12T03:52:47.883Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 15,
               "Title": "HomeController.cs",
               "DocumentMoniker": "D:\\dot_net_projects\\realstate_project\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
@@ -60,8 +270,7 @@
               "RelativeToolTip": "Controllers\\HomeController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-11T21:25:26.655Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-11T21:25:26.655Z"
             }
           ]
         }
