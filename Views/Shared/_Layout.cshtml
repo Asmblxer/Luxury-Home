@@ -83,10 +83,26 @@
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse yamm" id="navigation">
-                <div class="button navbar-right">
-                    <button class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.4s">Login</button>
+                <div class="button navbar-right d-flex align-items-center justify-content-end">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <!-- Logout form using POST method -->
+                        <form asp-controller="Accounts" asp-action="Logout" method="post" class="d-inline-block me-2">
+                            <button type="submit" class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.4s">Logout</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form asp-controller="Accounts" asp-action="Login" method="post" class="d-inline-block me-2">
+                            <button type="submit" class="navbar-btn nav-button wow bounceInRight login" data-wow-delay="0.4s">Login</button>
+                        </form>
+                    }
+
+                    <!-- Other link -->
                     <button class="navbar-btn nav-button wow fadeInRight" data-wow-delay="0.5s">Submit</button>
                 </div>
+
+
                 <ul class="main-nav nav navbar-nav navbar-right">
                     <li class="dropdown ymm-sw " data-wow-delay="0.1s">
                         <a href="#" class="dropdown-toggle active" data-toggle="dropdown" data-hover="dropdown" data-delay="200">Home <b class="caret"></b></a>
@@ -261,6 +277,11 @@
     <script src="~/assets/js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
     <script src="~/assets/js/jquery.validate.min.js"></script>
     <script src="~/assets/js/wizard.js"></script>
+    <!-- In your _Layout.cshtml or Razor page -->
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
 
     <script src="~/assets/js/main.js"></script>
 

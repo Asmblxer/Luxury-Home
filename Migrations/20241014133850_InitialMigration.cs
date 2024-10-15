@@ -121,7 +121,7 @@ namespace RealStats.Migrations
                         column: x => x.ProperityId,
                         principalTable: "Properities",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_LeaseAgreement_Tenant_TenantId",
                         column: x => x.TenantId,
