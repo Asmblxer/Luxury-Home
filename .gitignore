@@ -3,11 +3,10 @@
 *.user
 *.suo
 appsettings.json
-
+.gitignore
+appsettings.Development.json
+.idea/
 # Ignore build results
 bin/
-<<<<<<< HEAD
 obj/
-=======
-obj/
->>>>>>> 31ee926d123cd48a372b3f719b0237e6214d492a
+
