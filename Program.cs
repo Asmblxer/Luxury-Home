@@ -16,6 +16,18 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<RealStateContext>()
     .AddDefaultTokenProviders();
 
+// Configure Identity cookie settings
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    // Set the login path and other options
+    options.LoginPath = "/Accounts/Login";
+    options.AccessDeniedPath = "/Accounts/AccessDenied";
+
+    // Set the cookie expiration based on "Remember Me"
+    options.ExpireTimeSpan = TimeSpan.FromDays(14);  // Adjust the expiration time
+    options.SlidingExpiration = true;  // Optional: Enable sliding expiration (the cookie refreshes on activity)
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
