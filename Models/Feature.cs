@@ -9,8 +9,6 @@ namespace RealStats.Models
         public int Id { get; set; }
         [Required]
         public string Name { get; set; }
-        public int ProperityId { get; set; }
-        [ForeignKey("ProperityId")]
-        public Properity Properity { get; set; }
+        public ICollection<Properity> Properities { get; set; }
     }
 }

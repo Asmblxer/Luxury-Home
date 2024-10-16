@@ -49,21 +49,24 @@
                             <label class="form-check-label" for="rememberMe">Remember Me</label>
                         </div>
 
-
                         <div class="text-center">
                             <button type="submit" class="btn btn-default">Log in</button>
                         </div>
                     </form>
 
-                    <br />
+                    <!-- If user doesn't have an account, show the registration link -->
+                    <div class="text-center">
+                        <p>Don't have an account? <a asp-controller="Accounts" asp-action="Register">Create one here</a>.</p>
+                    </div>
 
                     <h2>Social login:</h2>
-
                     <p>
                         <a class="login-social" href="#"><i class="fa fa-facebook"></i>&nbsp;Facebook</a>
                         <a class="login-social" href="#"><i class="fa fa-google-plus"></i>&nbsp;Gmail</a>
                         <a class="login-social" href="#"><i class="fa fa-twitter"></i>&nbsp;Twitter</a>
                     </p>
+
+                    <br />
                 </div>
             </div>
         </div>

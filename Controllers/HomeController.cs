@@ -20,6 +20,7 @@ public class HomeController : Controller
         if (user != null)
         {
             ViewData["UserName"] = user.Name;
+            ViewData["IsManager"] = user.IsManager;
         }
         return View();
     }
