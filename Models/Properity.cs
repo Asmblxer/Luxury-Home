@@ -13,7 +13,12 @@ namespace RealStats.Models
         public string Name { get; set; }
 
         [Required]
-        public string Address { get; set; }
+        public string Country { get; set; }
+        [Required]
+        public string City { get; set; }
+
+        [Required]
+        public string Street { get; set; }
 
         [Required]
         public int Area { get; set; }
@@ -42,6 +47,7 @@ namespace RealStats.Models
 
         public ICollection<ReportIssue> ReportIssues { get; set; }  
         public ICollection<Feature> Features   { get; set; }
+        public ICollection<Image> Images { get; set; }
 
     }
 }

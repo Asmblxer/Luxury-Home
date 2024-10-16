@@ -10,6 +10,21 @@ namespace RealStats.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<Feature>().HasData(
+                new Feature {Id = 1 ,  Name = "Swimming Pool" },
+                new Feature {Id = 2 ,  Name = "Laundry Room"},
+                new Feature {Id = 3 ,  Name = "Emergency Exit"},
+                new Feature {Id = 4 ,  Name = "Fire Place"},
+                new Feature {Id = 5 ,  Name = "Garden"},
+                new Feature {Id = 6 ,  Name = "Smart Home"},
+                new Feature {Id = 7 ,  Name = "Elevator Access" }
+            );
+        }
+
         public DbSet<Manager> Managers { get; set; }
         public DbSet<Tenant> Tenant { get; set; }
         public DbSet<Properity> Properities { get; set; }

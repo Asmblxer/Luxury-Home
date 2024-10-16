@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RealStats.Data;
 
@@ -11,9 +12,11 @@ using RealStats.Data;
 namespace RealStats.Migrations
 {
     [DbContext(typeof(RealStateContext))]
-    partial class RealStateContextModelSnapshot : ModelSnapshot
+    [Migration("20241015232351_addCityProperty")]
+    partial class addCityProperty
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,21 +24,6 @@ namespace RealStats.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("FeatureProperity", b =>
-                {
-                    b.Property<int>("FeaturesId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProperitiesId")
-                        .HasColumnType("int");
-
-                    b.HasKey("FeaturesId", "ProperitiesId");
-
-                    b.HasIndex("ProperitiesId");
-
-                    b.ToTable("FeatureProperity");
-                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -269,60 +257,6 @@ namespace RealStats.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Features");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Swimming Pool"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Laundry Room"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Emergency Exit"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Fire Place"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Garden"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Smart Home"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Name = "Elevator Access"
-                        });
-                });
-
-            modelBuilder.Entity("RealStats.Models.Image", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("ImageUrl")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("ProperityId")
                         .HasColumnType("int");
 
@@ -330,7 +264,7 @@ namespace RealStats.Migrations
 
                     b.HasIndex("ProperityId");
 
-                    b.ToTable("Image");
+                    b.ToTable("Features");
                 });
 
             modelBuilder.Entity("RealStats.Models.LeaseAgreement", b =>
@@ -427,6 +361,10 @@ namespace RealStats.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Area")
                         .HasColumnType("int");
 
@@ -437,10 +375,6 @@ namespace RealStats.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -462,10 +396,6 @@ namespace RealStats.Migrations
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
-
-                    b.Property<string>("Street")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -535,21 +465,6 @@ namespace RealStats.Migrations
                     b.ToTable("Tenant");
                 });
 
-            modelBuilder.Entity("FeatureProperity", b =>
-                {
-                    b.HasOne("RealStats.Models.Feature", null)
-                        .WithMany()
-                        .HasForeignKey("FeaturesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("RealStats.Models.Properity", null)
-                        .WithMany()
-                        .HasForeignKey("ProperitiesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -616,10 +531,10 @@ namespace RealStats.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("RealStats.Models.Image", b =>
+            modelBuilder.Entity("RealStats.Models.Feature", b =>
                 {
                     b.HasOne("RealStats.Models.Properity", "Properity")
-                        .WithMany("Images")
+                        .WithMany("Features")
                         .HasForeignKey("ProperityId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -742,7 +657,7 @@ namespace RealStats.Migrations
 
             modelBuilder.Entity("RealStats.Models.Properity", b =>
                 {
-                    b.Navigation("Images");
+                    b.Navigation("Features");
 
                     b.Navigation("LeaseAgreements");
 
