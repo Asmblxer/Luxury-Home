@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RealStats.Data;
 
@@ -11,9 +12,11 @@ using RealStats.Data;
 namespace RealStats.Migrations
 {
     [DbContext(typeof(RealStateContext))]
-    partial class RealStateContextModelSnapshot : ModelSnapshot
+    [Migration("20241016173154_make-report-issue-autoincreament")]
+    partial class makereportissueautoincreament
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -643,7 +646,6 @@ namespace RealStats.Migrations
             modelBuilder.Entity("RealStats.Models.ReportIssue", b =>
                 {
                     b.Property<string>("Id")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")

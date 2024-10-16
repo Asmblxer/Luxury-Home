@@ -5,8 +5,12 @@ namespace RealStats.Models
 {
     public class ReportIssue
     {
+        [Key]
         public string Id { get; set; }
+        [MaxLength(200), Required]
+        public string Title { get; set; }
         [MaxLength(int.MaxValue), Required]
+
         public string Description { get; set; }
         public DateTime ReportDate { get; set; }
         public ReportIssue()

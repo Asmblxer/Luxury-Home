@@ -23,4 +23,9 @@
     <PackageReference Include="System.Text.Json" Version="8.0.5" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20241015224216_Initial.cs" />
+    <Compile Remove="Migrations\20241015224216_Initial.Designer.cs" />
+  </ItemGroup>
+
 </Project>
