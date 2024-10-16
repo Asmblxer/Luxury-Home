@@ -13,7 +13,10 @@ namespace RealStats.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-
+            builder.Entity<ReportIssue>()
+                .Property(r => r.Id)
+                .ValueGeneratedOnAdd();
+            
             builder.Entity<Feature>().HasData(
                 new Feature {Id = 1 ,  Name = "Swimming Pool" },
                 new Feature {Id = 2 ,  Name = "Laundry Room"},

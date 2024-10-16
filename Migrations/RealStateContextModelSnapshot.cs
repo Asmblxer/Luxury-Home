@@ -643,6 +643,7 @@ namespace RealStats.Migrations
             modelBuilder.Entity("RealStats.Models.ReportIssue", b =>
                 {
                     b.Property<string>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Description")
@@ -658,6 +659,11 @@ namespace RealStats.Migrations
 
                     b.Property<int>("TenantId")
                         .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
