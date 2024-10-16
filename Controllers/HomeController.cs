@@ -21,8 +21,13 @@ public class HomeController : Controller
     public async Task<IActionResult> Index(HomeViewModel viewModel)
     {
         var properties = _context.Properities
-            .Where(p => EF.Functions.Like(p.City, "%" + viewModel.City + "%")
-                        && EF.Functions.Like(p.Street, "%" + viewModel.keyWord + "%"))
+            .Where(p => 
+                p.City == viewModel.City &&
+                (EF.Functions.Like(p.Street, "%" + viewModel.keyWord + "%") ||
+                 EF.Functions.Like(p.Description, "%" + viewModel.keyWord + "%") ||
+                 EF.Functions.Like(p.Name, "%" + viewModel.keyWord + "%") ||
+                 EF.Functions.Like(p.Country, "%" + viewModel.keyWord + "%")
+                 ))
             .ToList();
 
         // If features are selected, filter by features
