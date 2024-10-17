@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RealStats.Data;
 
@@ -11,9 +12,11 @@ using RealStats.Data;
 namespace RealStats.Migrations
 {
     [DbContext(typeof(RealStateContext))]
-    partial class RealStateContextModelSnapshot : ModelSnapshot
+    [Migration("20241016202804_RemoveStatusTable")]
+    partial class RemoveStatusTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -467,6 +470,9 @@ namespace RealStats.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<bool>("status")
+                        .HasColumnType("bit");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ManagerId");
@@ -487,7 +493,8 @@ namespace RealStats.Migrations
                             ManagerId = 1,
                             Name = "Luxury Villa",
                             Price = 1500000.0,
-                            Street = "123 Sunset Blvd"
+                            Street = "123 Sunset Blvd",
+                            status = false
                         },
                         new
                         {
@@ -502,7 +509,8 @@ namespace RealStats.Migrations
                             ManagerId = 1,
                             Name = "Modern Apartment",
                             Price = 750000.0,
-                            Street = "45 Rue de Rivoli"
+                            Street = "45 Rue de Rivoli",
+                            status = false
                         },
                         new
                         {
@@ -517,7 +525,8 @@ namespace RealStats.Migrations
                             ManagerId = 1,
                             Name = "Cozy Cottage",
                             Price = 400000.0,
-                            Street = "10 Downing St"
+                            Street = "10 Downing St",
+                            status = false
                         },
                         new
                         {
@@ -532,7 +541,8 @@ namespace RealStats.Migrations
                             ManagerId = 1,
                             Name = "Spacious Loft",
                             Price = 950000.0,
-                            Street = "250 W 34th St"
+                            Street = "250 W 34th St",
+                            status = false
                         },
                         new
                         {
@@ -547,7 +557,8 @@ namespace RealStats.Migrations
                             ManagerId = 1,
                             Name = "Beach House",
                             Price = 2000000.0,
-                            Street = "5 Beach Rd"
+                            Street = "5 Beach Rd",
+                            status = false
                         },
                         new
                         {
@@ -562,7 +573,8 @@ namespace RealStats.Migrations
                             ManagerId = 1,
                             Name = "Country Farm",
                             Price = 1200000.0,
-                            Street = "100 Country Rd"
+                            Street = "100 Country Rd",
+                            status = false
                         },
                         new
                         {
@@ -577,7 +589,8 @@ namespace RealStats.Migrations
                             ManagerId = 1,
                             Name = "Penthouse Suite",
                             Price = 2500000.0,
-                            Street = "1 Ocean Dr"
+                            Street = "1 Ocean Dr",
+                            status = false
                         },
                         new
                         {
@@ -592,7 +605,8 @@ namespace RealStats.Migrations
                             ManagerId = 1,
                             Name = "Family Home",
                             Price = 600000.0,
-                            Street = "20 Hauptstrasse"
+                            Street = "20 Hauptstrasse",
+                            status = false
                         },
                         new
                         {
@@ -607,7 +621,8 @@ namespace RealStats.Migrations
                             ManagerId = 1,
                             Name = "Loft Apartment",
                             Price = 850000.0,
-                            Street = "15 Passeig de Gràcia"
+                            Street = "15 Passeig de Gràcia",
+                            status = false
                         },
                         new
                         {
@@ -622,22 +637,9 @@ namespace RealStats.Migrations
                             ManagerId = 1,
                             Name = "Modern Home",
                             Price = 950000.0,
-                            Street = "50 Via Roma"
+                            Street = "50 Via Roma",
+                            status = false
                         });
-                });
-
-            modelBuilder.Entity("RealStats.Models.ProperityStatus", b =>
-                {
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProperityStatus");
                 });
 
             modelBuilder.Entity("RealStats.Models.ReportIssue", b =>
@@ -845,17 +847,6 @@ namespace RealStats.Migrations
                     b.Navigation("manager");
                 });
 
-            modelBuilder.Entity("RealStats.Models.ProperityStatus", b =>
-                {
-                    b.HasOne("RealStats.Models.Properity", "Properity")
-                        .WithOne("ProperityStatus")
-                        .HasForeignKey("RealStats.Models.ProperityStatus", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Properity");
-                });
-
             modelBuilder.Entity("RealStats.Models.ReportIssue", b =>
                 {
                     b.HasOne("RealStats.Models.Properity", "Properity")
@@ -903,9 +894,6 @@ namespace RealStats.Migrations
                     b.Navigation("Images");
 
                     b.Navigation("LeaseAgreements");
-
-                    b.Navigation("ProperityStatus")
-                        .IsRequired();
 
                     b.Navigation("ReportIssues");
                 });
