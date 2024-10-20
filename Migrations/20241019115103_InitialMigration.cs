@@ -294,8 +294,7 @@ namespace RealStats.Migrations
                     LeaseStatus = table.Column<bool>(type: "bit", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    PaymentDueDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TerminationClause = table.Column<double>(type: "float", nullable: false),
+                    LeaseDuration = table.Column<int>(type: "int", nullable: false),
                     ProperityId = table.Column<int>(type: "int", nullable: false),
                     ManagerId = table.Column<int>(type: "int", nullable: false),
                     TenantId = table.Column<int>(type: "int", nullable: false)
@@ -308,7 +307,7 @@ namespace RealStats.Migrations
                         column: x => x.ManagerId,
                         principalTable: "Managers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_LeaseAgreement_Properities_ProperityId",
                         column: x => x.ProperityId,
@@ -338,7 +337,7 @@ namespace RealStats.Migrations
                         column: x => x.ProperityId,
                         principalTable: "Properities",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ProperityTenant_Tenant_TenantsId",
                         column: x => x.TenantsId,
@@ -366,13 +365,39 @@ namespace RealStats.Migrations
                         column: x => x.ProperityId,
                         principalTable: "Properities",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_ReportIssues_Tenant_TenantId",
                         column: x => x.TenantId,
                         principalTable: "Tenant",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TermsAndConditions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Terms = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PaymentTerms = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    PenaltyClauses = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    MaintenanceResponsibility = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    CancellationPolicy = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    RenewalPolicy = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    InsuranceRequirements = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    ProperityId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TermsAndConditions", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TermsAndConditions_Properities_ProperityId",
+                        column: x => x.ProperityId,
+                        principalTable: "Properities",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -383,6 +408,9 @@ namespace RealStats.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Amount = table.Column<double>(type: "float", nullable: false),
                     PaymentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IsPaid = table.Column<bool>(type: "bit", nullable: false),
                     LeaseAgreementId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -508,6 +536,12 @@ namespace RealStats.Migrations
                 name: "IX_Tenant_UserId",
                 table: "Tenant",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_TermsAndConditions_ProperityId",
+                table: "TermsAndConditions",
+                column: "ProperityId",
+                unique: true);
         }
 
         /// <inheritdoc />
@@ -542,6 +576,9 @@ namespace RealStats.Migrations
 
             migrationBuilder.DropTable(
                 name: "ReportIssues");
+
+            migrationBuilder.DropTable(
+                name: "TermsAndConditions");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

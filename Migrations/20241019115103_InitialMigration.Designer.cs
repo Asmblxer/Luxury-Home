@@ -12,7 +12,7 @@ using RealStats.Data;
 namespace RealStats.Migrations
 {
     [DbContext(typeof(RealStateContext))]
-    [Migration("20241016213030_InitialMigration")]
+    [Migration("20241019115103_InitialMigration")]
     partial class InitialMigration
     {
         /// <inheritdoc />
@@ -347,14 +347,14 @@ namespace RealStats.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("LeaseDuration")
+                        .HasColumnType("int");
+
                     b.Property<bool>("LeaseStatus")
                         .HasColumnType("bit");
 
                     b.Property<int>("ManagerId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("PaymentDueDate")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("ProperityId")
                         .HasColumnType("int");
@@ -364,9 +364,6 @@ namespace RealStats.Migrations
 
                     b.Property<int>("TenantId")
                         .HasColumnType("int");
-
-                    b.Property<double>("TerminationClause")
-                        .HasColumnType("float");
 
                     b.HasKey("Id");
 
@@ -409,10 +406,19 @@ namespace RealStats.Migrations
                     b.Property<double>("Amount")
                         .HasColumnType("float");
 
+                    b.Property<DateTime>("EndDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsPaid")
+                        .HasColumnType("bit");
+
                     b.Property<int>("LeaseAgreementId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("PaymentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("Id");
@@ -531,6 +537,59 @@ namespace RealStats.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Tenant");
+                });
+
+            modelBuilder.Entity("RealStats.Models.TermsAndConditions", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CancellationPolicy")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("InsuranceRequirements")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("MaintenanceResponsibility")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("PaymentTerms")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("PenaltyClauses")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("ProperityId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("RenewalPolicy")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("Terms")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProperityId")
+                        .IsUnique();
+
+                    b.ToTable("TermsAndConditions");
                 });
 
             modelBuilder.Entity("FeatureProperity", b =>
@@ -715,6 +774,17 @@ namespace RealStats.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("RealStats.Models.TermsAndConditions", b =>
+                {
+                    b.HasOne("RealStats.Models.Properity", "Properity")
+                        .WithOne("TermsAndConditions")
+                        .HasForeignKey("RealStats.Models.TermsAndConditions", "ProperityId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Properity");
+                });
+
             modelBuilder.Entity("RealStats.Models.LeaseAgreement", b =>
                 {
                     b.Navigation("Payments");
@@ -734,6 +804,9 @@ namespace RealStats.Migrations
                     b.Navigation("LeaseAgreements");
 
                     b.Navigation("ReportIssues");
+
+                    b.Navigation("TermsAndConditions")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("RealStats.Models.Tenant", b =>
