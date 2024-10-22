@@ -1,4 +1,4 @@
-@model IEnumerable<RealStats.Models.Properity>
+@model SearchViewModel
 
 @{
     ViewData["Title"] = "Properties";
@@ -24,9 +24,65 @@
                             <h3 class="panel-title">Smart search</h3>
                         </div>
                         <div class="panel-body search-widget">
-                            <form action="" class=" form-inline"> 
-                                <!-- Copy the form fields from properties.html here -->
-                                <!-- Include all the input fields, selects, and sliders -->
+                            <form action="/Properties" class=" form-inline" method="get">
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <input type="text" class="form-control" placeholder="Key word" name="keyword">
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset>
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <select name="city" title="Select Your City" class="form-control">
+                                                <option value="" disabled selected hidden>Select Your City</option> 
+                                                @foreach (var city in Model.Cities)
+                                                {
+                                                    <option value="@city">@city</option>
+                                                }
+                                            </select>
+                                        </div>
+
+                                        <div class="col-xs-6">
+                                            <select id="basic" name="status" class="form-control">
+                                                <option value="">-Status-</option>
+                                                <option value="true">Not Rented (Available)</option>
+                                                <option value="false">Rented (Not Available)</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </fieldset>
+
+                                <fieldset class="padding-5">
+                                    <div class="row">
+                                        <div class="col-xs-6">
+                                            <label for="price-range">Price range ($):</label>
+                                            <input type="text" id="price-range" name="priceRange" class="span2" value=""
+                                                   data-slider-min="2000" data-slider-max="100000"
+                                                   data-slider-step="1000" data-slider-value="[2000,100000]"><br />
+                                            <b class="pull-left color">2000$</b>
+                                            <b class="pull-right color">100000$</b>
+                                        </div>
+                                        <div class="col-xs-6">
+                                            <label for="property-geo">Property geo (m²) :</label>
+                                            <input type="text" id="property-geo" name="areaRange" class="span2" value=""
+                                                   data-slider-min="40" data-slider-max="12000"
+                                                   data-slider-step="100" data-slider-value="[40,12000]"><br />
+                                            <b class="pull-left color">40m²</b>
+                                            <b class="pull-right color">12000m²</b>
+                                        </div>
+                                    </div>
+
+                                </fieldset>                                
+                                <fieldset >
+                                    <div class="row">
+                                        <div class="col-xs-12">  
+                                            <input class="button btn largesearch-btn" value="Search" type="submit">
+                                        </div>  
+                                    </div>
+                                </fieldset>
                             </form>
                         </div>
                     </div>
@@ -39,12 +95,12 @@
                         <ul class="sort-by-list">
                             <li class="active">
                                 <a href="javascript:void(0);" class="order_by_date" data-orderby="property_date" data-order="ASC">
-                                    Property Date <i class="fa fa-sort-amount-asc"></i>					
+                                    Properity Date <i class="fa fa-sort-amount-asc"></i>					
                                 </a>
                             </li>
                             <li class="">
                                 <a href="javascript:void(0);" class="order_by_price" data-orderby="property_price" data-order="DESC">
-                                    Property Price <i class="fa fa-sort-numeric-desc"></i>						
+                                    Properity Price <i class="fa fa-sort-numeric-desc"></i>						
                                 </a>
                             </li>
                         </ul>
@@ -58,18 +114,18 @@
 
                 <div class="col-md-12 clear"> 
                     <div id="list-type" class="proerty-th">
-                        @foreach (var property in Model)
+                        @foreach (var property in Model.Properities)
                         {
                             <div class="col-sm-6 col-md-4 p0">
                                 <div class="box-two proerty-item">
                                     <div class="item-thumb">
-                                        <a href="@Url.Action("Details","property", new { propertyId = property.Id })" >
-                                            <img src="@(property.Images.FirstOrDefault()?.ImageUrl ?? "/assets/img/demo/property-3.jpg")">
+                                        <a href="@Url.Action("Details", "Property", new { propertyId = property.Id })">
+                                            <img src="@(property.Images?.FirstOrDefault()?.ImageUrl ?? "/assets/img/demo/property-3.jpg")" alt="@property.Name">
                                         </a>
                                     </div>
 
                                     <div class="item-entry overflow">
-                                        <h5><a href="@Url.Action("Details","property", new { propertyId = property.Id })"> @property.Name </a></h5>
+                                        <h5><a href="@Url.Action("Details","Properity", new { propertyId = property.Id })"> @property.Name </a></h5>
                                         <div class="dot-hr"></div>
                                         <span class="pull-left"><b> Area :</b> @property.Area m² </span>
                                         <span class="proerty-price pull-right"> $ @property.Price</span>
@@ -114,3 +170,15 @@
         </div>              
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $("#price-range").slider({
+            tooltip: 'always'
+        });
+
+        $("#property-geo").slider({
+            tooltip: 'always'
+        });
+    });
+</script>

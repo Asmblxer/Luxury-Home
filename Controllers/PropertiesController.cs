@@ -1,5 +1,7 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using RealStats.Data;
 using RealStats.Models;
 using System.Threading.Tasks;
@@ -14,68 +16,64 @@ namespace RealStats.Controllers
         {
             _context = context;
         }
-          public async Task<IActionResult> Index(int page = 1, int pageSize = 9, string keyword = null, string city = null, string status = null, decimal? minPrice = null, decimal? maxPrice = null, int? minBeds = null, int? minBaths = null)
-          {
-              var query = _context.Properities
-                  .Include(p => p.Images)
-                  .Include(p => p.manager)
-                  .AsQueryable();
-
-              if (!string.IsNullOrEmpty(keyword))
-                  query = query.Where(p => p.Name.Contains(keyword) || p.Description.Contains(keyword));
-
-              if (!string.IsNullOrEmpty(city))
-                  query = query.Where(p => p.City == city);
-
-              if (!string.IsNullOrEmpty(status))
-                  query = query.Where(p => p.Status.ToString() == status);
-
-              if (minPrice.HasValue)
-                  query = query.Where(p => p.Price >= (double)minPrice.Value);
-
-              if (maxPrice.HasValue)
-                  query = query.Where(p => p.Price <= (double)maxPrice.Value);
-
-              if (minBeds.HasValue)
-                  query = query.Where(p => p.Bedrooms >= minBeds.Value);
-
-              if (minBaths.HasValue)
-                  query = query.Where(p => p.Bathrooms >= minBaths.Value);
-
-              var totalProperties = await query.CountAsync();
-              var totalPages = (int)Math.Ceiling(totalProperties / (double)pageSize);
-
-              var properties = await query
-                  .Skip((page - 1) * pageSize)
-                  .Take(pageSize)
-                  .ToListAsync();
-
-              ViewBag.CurrentPage = page;
-              ViewBag.TotalPages = totalPages;
-
-              return View(properties);
-          }
-
-        public async Task<IActionResult> Details(int? id)
+        [HttpGet]
+        [Authorize]
+        public IActionResult Index(string keyword, string city, string status, string priceRange, string areaRange)
         {
-            if (id == null)
+            var properties = _context.Properities.Include(p => p.Images).AsQueryable();
+
+            if (!string.IsNullOrEmpty(keyword))
             {
-                return NotFound();
+                properties = properties.Where(p => p.Name.Contains(keyword) || p.Description.Contains(keyword));
             }
 
-            var property = await _context.Properities
-                .Include(p => p.Images)
-                .Include(p => p.manager)
-                .FirstOrDefaultAsync(m => m.Id == id);
-
-            if (property == null)
+            if (!string.IsNullOrEmpty(city))
             {
-                return NotFound();
+                properties = properties.Where(p => p.City == city);
             }
 
-            return View(property);
+            if (!string.IsNullOrEmpty(status))
+            {
+                bool isAvailable = status.Equals("true", StringComparison.OrdinalIgnoreCase);
+                properties = properties.Where(p => p.Status == isAvailable);
+            }
+
+            if (!string.IsNullOrEmpty(priceRange))
+            {
+                var priceValues = priceRange.Split(',');
+                if (priceValues.Length == 2 &&
+                    double.TryParse(priceValues[0], out double minPrice) &&
+                    double.TryParse(priceValues[1], out double maxPrice))
+                {
+                    properties = properties.Where(p => p.Price >= minPrice && p.Price <= maxPrice);
+                }
+                else
+                {
+                    ModelState.AddModelError("priceRange", "Invalid price range format.");
+                }
+            }
+            if (!string.IsNullOrEmpty(areaRange))
+            {
+                var areaValues = areaRange.Split(',');
+                if (areaValues.Length == 2 &&
+                    int.TryParse(areaValues[0], out int minArea) &&
+                    int.TryParse(areaValues[1], out int maxArea))
+                {
+                    properties = properties.Where(p => p.Area >= minArea && p.Area <= maxArea);
+                }
+                else
+                {
+                    ModelState.AddModelError("areaRange", "Invalid area range format.");
+                }
+            }
+            var searchViewModel = new SearchViewModel
+            {
+                Properities = properties.ToList(),
+                Cities = _context.Properities.Select(p => p.City).Distinct().ToList()
+            };
+
+            return View(searchViewModel);
         }
 
-        // Add Create, Edit, and Delete actions as needed
     }
 }
