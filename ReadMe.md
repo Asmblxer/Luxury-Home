@@ -65,8 +65,6 @@ The project follows the MVC (Model-View-Controller)
 
 ### Authentication
 - Uses ASP.NET Core Identity
-- JWT tokens for API authentication
-- Role-based authorization
 
 ### Property Management
 - CRUD operations
