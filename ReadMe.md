@@ -1,6 +1,6 @@
 # PropertyRent 🏠
 
-A modern web application for property rental management, enabling users to browse, book, and manage rental properties with ease.
+A modern web application for property rental management built with ASP.NET Core MVC, enabling users to browse, book, and manage rental properties with ease.
 
 ![Homepage Screenshot](/api/placeholder/800/400)
 *Homepage showing featured properties and search functionality*
@@ -9,21 +9,34 @@ A modern web application for property rental management, enabling users to brows
 
 - **Property Listings**: Browse through diverse property offerings with detailed information
 - **Advanced Search**: Filter properties by location, price, amenities, and availability
-- **User Authentication**: Secure login and registration system
+- **User Authentication**: ASP.NET Core Identity for secure user management
 - **Booking Management**: Easy-to-use booking interface with real-time availability
 - **Payment Integration**: Secure payment processing
 - **Property Owner Dashboard**: Manage listings, bookings, and analytics
 - **Review System**: Allow tenants to rate and review properties
+- **Admin Panel**: Comprehensive administration dashboard
 
 ## Tech Stack 🛠️
 
-- **Frontend**: React.js, TailwindCSS
-- **Backend**: Node.js, Express
-- **Database**: PostgreSQL
-- **Authentication**: JWT, OAuth2.0
-- **Payment Processing**: Stripe
-- **Cloud Storage**: AWS S3
-- **Deployment**: Docker, AWS
+- **Framework**: ASP.NET Core 8.0 MVC
+- **Frontend**: 
+  - Razor Views
+  - Bootstrap 5
+  - jQuery
+  - AJAX for dynamic content
+- **Backend**:
+  - C#
+  - Entity Framework Core
+  - LINQ
+- **Database**: MS SQL Server
+- **Authentication**: ASP.NET Core Identity
+- **Payment Processing**: Stripe - Future work
+- **Cloud Storage**: Future work
+- **Deployment**: MonsterASP
+
+## Architecture 🏗️
+
+The project follows the MVC (Model-View-Controller)
 
 ## Database Design 📊
 
@@ -42,95 +55,36 @@ A modern web application for property rental management, enabling users to brows
 
 ### Payment Process
 ![Payment Interface](/api/placeholder/800/400)
-*Secure payment interface powered by Stripe*
+![Payment Interface](/api/placeholder/800/400)
+![Payment Interface](/api/placeholder/800/400)
 
-## Installation 🚀
 
-1. Clone the repository
-```bash
-git clone https://github.com/yourusername/propertyrent.git
-cd propertyrent
-```
+## Key Features Implementation 🔧
 
-2. Install dependencies
-```bash
-# Install backend dependencies
-cd backend
-npm install
+### Authentication
+- Uses ASP.NET Core Identity
+- JWT tokens for API authentication
+- Role-based authorization
 
-# Install frontend dependencies
-cd ../frontend
-npm install
-```
+### Property Management
+- CRUD operations
+- Image upload
+- Search and filtering functionality
 
-3. Set up environment variables
-```bash
-# Backend .env
-cp .env.example .env
+### Booking System
+- Real-time availability checking
+- Integration with Stripe for payments (future work)
+- Email notifications using SendGrid (future work)
 
-# Frontend .env
-cp .env.example .env
-```
 
-4. Start the development servers
-```bash
-# Start backend server
-cd backend
-npm run dev
 
-# Start frontend server
-cd frontend
-npm start
-```
+## Contributers TEAM 🤝
+1 - [@sahil-kumar-singh](https://github.com/sahil-kumar-singh)
+2 - [@sahil-kumar-singh](https://github.com/sahil-kumar-singh)
+3 - [@sahil-kumar-singh](https://github.com/sahil-kumar-singh)
+4 - [@sahil-kumar-singh](https://github.com/sahil-kumar-singh)
 
-## Environment Variables 🔐
 
-Create `.env` files in both frontend and backend directories:
 
-```env
-# Backend
-DATABASE_URL=postgresql://username:password@localhost:5432/propertyrent
-JWT_SECRET=your_jwt_secret
-STRIPE_SECRET_KEY=your_stripe_secret_key
-AWS_ACCESS_KEY=your_aws_access_key
-AWS_SECRET_KEY=your_aws_secret_key
-
-# Frontend
-REACT_APP_API_URL=http://localhost:5000
-REACT_APP_STRIPE_PUBLIC_KEY=your_stripe_public_key
-```
-
-## API Documentation 📝
-
-API documentation is available at `/api/docs` when running the development server. The API includes endpoints for:
-
-- User Authentication
-- Property Management
-- Booking Operations
-- Payment Processing
-- Review System
-
-## Contributing 🤝
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## License 📄
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
-## Contact 📧
-
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter) - email@example.com
-
-Project Link: [https://github.com/yourusername/propertyrent](https://github.com/yourusername/propertyrent)
-
-## Acknowledgments 🙏
-
-- [React Documentation](https://reactjs.org/)
-- [Node.js](https://nodejs.org/)
-- [Stripe](https://stripe.com/)
-- [TailwindCSS](https://tailwindcss.com/)
+## Live Demo 🌐
+Check out the live demo at [PropertyRent](https://propertyrent.azurewebsites.net/)
