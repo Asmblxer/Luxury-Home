@@ -1,8 +1,8 @@
-# PropertyRent 🏠
+# Luxury Home 🏠
 
 A modern web application for property rental management built with ASP.NET Core MVC, enabling users to browse, book, and manage rental properties with ease.
 
-![Homepage Screenshot](/api/placeholder/800/400)
+![Homepage Screenshot](/wwwroot/images/README/homepage.png)
 *Homepage showing featured properties and search functionality*
 
 ## Features ✨
@@ -40,23 +40,25 @@ The project follows the MVC (Model-View-Controller)
 
 ## Database Design 📊
 
-![Database Schema](/api/placeholder/800/600)
+![Database Schema](/wwwroot/images/README/database.jpg)
 *Entity Relationship Diagram showing the database structure*
 
 ## Screenshots 📸
 
 ### Search and Filter
-![Search Interface](/api/placeholder/800/400)
+![Search Interface](/wwwroot/images/README/search.jpg)
 *Advanced search interface with multiple filtering options*
 
 ### Property Details
-![Property Details](/api/placeholder/800/400)
+![Property Details](/wwwroot/images/README/details.jpg)
 *Detailed property view with image gallery and booking options*
 
 ### Payment Process
-![Payment Interface](/api/placeholder/800/400)
-![Payment Interface](/api/placeholder/800/400)
-![Payment Interface](/api/placeholder/800/400)
+![Lease Agreement](/wwwroot/images/README/lease.jpg)
+![Lease Agreement](/wwwroot/images/README/lease2.jpg)
+![Payment Interface](/wwwroot/images/README/payment.jpg)
+![Payment Interface](/wwwroot/images/README/payment2.jpg)
+![Payment Interface](/wwwroot/images/README/payment3.jpg)
 
 
 ## Key Features Implementation 🔧
@@ -79,12 +81,10 @@ The project follows the MVC (Model-View-Controller)
 
 
 ## Contributers TEAM 🤝
-1 - [@sahil-kumar-singh](https://github.com/sahil-kumar-singh)
-2 - [@sahil-kumar-singh](https://github.com/sahil-kumar-singh)
-3 - [@sahil-kumar-singh](https://github.com/sahil-kumar-singh)
-4 - [@sahil-kumar-singh](https://github.com/sahil-kumar-singh)
-
+1 - [@Yosef-Samir](https://github.com/yosefsamir)
+2 - [@Karem-Taha](https://github.com/kareemtaha3)
+3 - [@Yousef-Sedik](https://github.com/YousefSedik)
 
 
 ## Live Demo 🌐
-Check out the live demo at [PropertyRent](https://propertyrent.azurewebsites.net/)
+Check out the live demo at [Luxury Home](https://depi-real-estate.runasp.net/)
